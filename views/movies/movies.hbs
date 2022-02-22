@@ -3,7 +3,9 @@
     
 {{#each allMovies}}
 
-<li>{{this.title}}</li>
+
+<a href="/movies/{{this._id}}/details"><li>{{this.title}}</li></a>
+
 
 {{/each}}
 

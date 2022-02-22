@@ -1,0 +1,22 @@
+<h2>Movies Details</h2>
+
+<div>
+<h4>{{oneMovie.title}}</h4>
+<h4>{{oneMovie.genre}}</h4>
+<h4>{{oneMovie.plot}}</h4>
+
+
+{{#each oneMovie.cast}}
+
+<h4>Celebrity: {{this.name}}</h4>
+<h4>Ocuppation: {{this.occupation}}</h4>
+<h4>catchPhrase: {{this.catchPhrase}}</h4>
+
+{{/each}}
+<form action="/movies/{{oneMovie._id}}/delete" method="POST">
+    <button type="submit"class="btn btn-outline-danger">Borrar</button>
+</form>
+<form action="/movies/{{oneMovie._id}}/edit" method="POST">
+    <button type="submit" class="btn btn-outline-success">Editar</button>
+</form>
+</div>
