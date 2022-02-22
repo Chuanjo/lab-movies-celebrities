@@ -19,7 +19,16 @@ router.post("/create",(req,res,next)=>{
     .catch((err)=>{
         next(err)
     })
-    
+})
+
+router.get("/", (req,res,next)=>{
+    CelebrityModel.find()
+    .then((allCelebrities)=>{
+        res.render("celebrities/celebrities.hbs", {allCelebrities})
+    })
+    .catch((err)=>{
+        next(err)
+    })
 })
 
 
