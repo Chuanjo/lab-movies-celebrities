@@ -6,3 +6,22 @@ body {
 a {
   color: #00b7ff;
 }
+
+h2 {
+  text-align: start;
+  color: blue;
+  padding-left: 110px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.movie-edit {
+  width: 25px;
+  height: 100px;
+}
+
+form {
+  height: 100;
+}

@@ -1,16 +1,69 @@
 <h2>New Movies</h2>
 
-<form method="POST" action="/movies/create">
-  <input type="text" name="title" />
-  <input type="text" name="genre" />
-  <input type="text" name="plot" />
+<div id="create-form">
+  <form method="POST" action="/movies/create">
 
-  <select name="cast" multiple>
-    {{#each allCelebrities}}
-      <option value="{{this._id}}">{{this.name}}</option>
-    {{/each}}
-  </select>
+    <div class="input-group mb-3">
+      <span
+        for="title"
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+      >Title</span>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+      />
+    </div>
 
-  <button type="submit" class="btn btn-outline-success">Create</button>
+    <div class="input-group mb-3">
+      <span
+        for="genre"
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+      >Movie Genre</span>
+      <input
+        type="text"
+        name="genre"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+      />
+    </div>
 
-</form>
+    <div class="input-group mb-3">
+      <span
+        for="plot"
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+      >Plot</span>
+      <input
+        type="text"
+        name="plot"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+      />
+    </div>
+
+    <div>
+
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        name="cast"
+        multiple
+      >
+        <option selected>Open this select menu</option>
+        {{#each allCelebrities}}
+          <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-outline-success">Create</button>
+
+  </form>
+
+</div>

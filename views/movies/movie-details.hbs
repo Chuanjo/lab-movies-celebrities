@@ -1,22 +1,34 @@
 <h2>Movies Details</h2>
 
-<div>
-<h4>{{oneMovie.title}}</h4>
-<h4>{{oneMovie.genre}}</h4>
-<h4>{{oneMovie.plot}}</h4>
+<div id="create-movies">
+  <div class="card" style="width: 28rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{oneMovie.title}}</h5>
+      <p class="card-text">{{oneMovie.plot}}</p>
+      <a href="#" class="btn btn-primary">{{oneMovie.genre}}</a>
+    </div>
+  </div>
 
+  {{#each oneMovie.cast}}
 
-{{#each oneMovie.cast}}
+    <div class="card" style="width: 28rem;">
+      <div class="card-header">
+        Featured
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Celebrity: {{this.name}}</li>
+        <li class="list-group-item">Ocuppation: {{this.occupation}}</li>
+        <li class="list-group-item">{{this.catchPhrase}}</li>
+      </ul>
+    </div>
 
-<h4>Celebrity: {{this.name}}</h4>
-<h4>Ocuppation: {{this.occupation}}</h4>
-<h4>catchPhrase: {{this.catchPhrase}}</h4>
-
-{{/each}}
-<form action="/movies/{{oneMovie._id}}/delete" method="POST">
-    <button type="submit"class="btn btn-outline-danger">Borrar</button>
-</form>
-<form action="/movies/{{oneMovie._id}}/edit" method="POST">
-    <button type="submit" class="btn btn-outline-success">Editar</button>
-</form>
+  {{/each}}
+  <div class="button-movie">
+    <form action="/movies/{{oneMovie._id}}/delete" method="POST">
+      <button type="submit" class="btn btn-outline-danger">Borrar</button>
+    </form>
+    <form action="/movies/{{oneMovie._id}}/edit" method="POST">
+      <button type="submit" class="btn btn-outline-success">Editar</button>
+    </form>
+  </div>
 </div>
